@@ -1,10 +1,10 @@
 // API Urls
 import { SEARCH_BASE_URL, POPULAR_BASE_URL } from 'config';
 // Utils
-import { basicFetch } from '@/api/fetchFunction';
+import { basicFetch } from '@api/fetchFunction';
 // Types
 import type { NextApiRequest, NextApiResponse } from 'next';
-import type { Movies } from '@/api/types';
+import type { Movies } from '@api/types';
 
 export default async function handler(
   req: NextApiRequest,

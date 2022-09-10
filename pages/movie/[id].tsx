@@ -7,17 +7,17 @@ import {
 } from 'config';
 
 // Components
-import Header from '@/components/Header';
-import Breadcrumb from '@/components/Breadcrumb';
-import MovieInfo from '@/components/MovieInfo';
-import Grid from '@/components/Grid';
-import Card from '@/components/Card';
+import Header from '@components/Header';
+import Breadcrumb from '@components/Breadcrumb';
+import MovieInfo from '@components/MovieInfo';
+import Grid from '@components/Grid';
+import Card from '@components/Card';
 
 // Utils
-import { basicFetch } from '@/api/fetchFunction';
+import { basicFetch } from '@api/fetchFunction';
 
 // Types
-import type { Movie, Credits, Crew, Cast } from '@/api/types';
+import type { Movie, Credits, Crew, Cast } from '@api/types';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 type Props = {
@@ -27,6 +27,9 @@ type Props = {
 };
 
 const Movie: NextPage<Props> = ({ movie, cast, directors }) => {
+
+  if (!movie && !cast && !directors) return <h1>Error</h1>
+
   return (
     <main>
       <Header />

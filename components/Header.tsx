@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import SearchInput from '@/components/SearchInput';
+import SearchInput from '@components/SearchInput';
 
 type Props = {
   setQuery?: Dispatch<SetStateAction<string>>;

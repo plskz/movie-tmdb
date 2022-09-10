@@ -1,19 +1,19 @@
-import { UIEvent, useState } from 'react';
 import type { NextPage } from 'next';
 import Link from 'next/link';
+import { UIEvent, useState } from 'react';
 
 // Fetch hook
-import { useFetchMovies } from '@/api/fetchHooks';
+import { useFetchMovies } from '@api/fetchHooks';
 
 // Config
 import { BACKDROP_SIZE, IMAGE_BASE_URL, POSTER_SIZE } from 'config';
 
 // Components
-import Card from '@/components/Card';
-import Grid from '@/components/Grid';
-import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import Spinner from '@/components/Spinner';
+import Card from '@components/Card';
+import Grid from '@components/Grid';
+import Header from '@components/Header';
+import Hero from '@components/Hero';
+import Spinner from '@components/Spinner';
 
 const Home: NextPage = () => {
   const [query, setQuery] = useState('');
@@ -36,14 +36,14 @@ const Home: NextPage = () => {
       {!query && data && data.pages && (
         <Hero
           imgUrl={
-            data.pages[0].results[2]?.backdrop_path
+            data.pages[0].results[0]?.backdrop_path
               ? IMAGE_BASE_URL +
                 BACKDROP_SIZE +
-                data.pages[0].results[2].backdrop_path
+                data.pages[0].results[0].backdrop_path
               : '/no_image.jpg'
           }
-          title={data.pages[0].results[2].title || 'No Title'}
-          text={data.pages[0].results[2].overview || 'No Overview'}
+          title={data.pages[0].results[0].title || 'No Title'}
+          text={data.pages[0].results[0].overview || 'No Overview'}
         />
       )}
       <Grid
@@ -64,7 +64,7 @@ const Home: NextPage = () => {
                     title={movie.title}
                     imgUrl={
                       movie.poster_path
-                        ? IMAGE_BASE_URL + BACKDROP_SIZE + movie.poster_path
+                        ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
                         : '/no_image.jpg'
                     }
                   />

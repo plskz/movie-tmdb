@@ -4,11 +4,11 @@ import Image from 'next/image';
 import { calcTime, convertMoney } from 'helpers';
 
 // Components
-import Thumb from '@/components/Thumb';
-import Pill from '@/components/Pill';
+import Thumb from '@components/Thumb';
+import Pill from '@components/Pill';
 
 // Types
-import { Crew } from '@/api/types';
+import { Crew } from '@api/types';
 
 type Props = {
   thumbUrl: string;

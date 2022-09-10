@@ -1,4 +1,4 @@
-import Thumb from '@/components/Thumb';
+import Thumb from '@components/Thumb';
 
 type Props = {
   imgUrl: string;
