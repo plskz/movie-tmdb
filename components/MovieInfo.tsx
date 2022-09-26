@@ -1,14 +1,14 @@
 import Image from 'next/image';
 
 // Helpers
-import { calcTime, convertMoney } from 'helpers';
+import { calcTime, convertMoney } from '@utils';
 
 // Components
-import Thumb from '@components/Thumb';
 import Pill from '@components/Pill';
+import Thumb from '@components/Thumb';
 
 // Types
-import { Crew } from '@api/types';
+import { Crew } from '@types';
 
 type Props = {
   thumbUrl: string;

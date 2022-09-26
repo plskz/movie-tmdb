@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { UIEvent, useState } from 'react';
 
 // Fetch hook
-import { useFetchMovies } from '@api/fetchHooks';
+import { useFetchMovies } from '@hooks';
 
 // Config
-import { BACKDROP_SIZE, IMAGE_BASE_URL, POSTER_SIZE } from 'config';
+import { BACKDROP_SIZE, IMAGE_BASE_URL, POSTER_SIZE } from '@utils';
 
 // Components
 import Card from '@components/Card';
